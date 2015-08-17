@@ -5,7 +5,8 @@ import java.io.IOException;
 import java.util.List;
 import org.apache.commons.io.FileUtils;
 
-/* This is simple and short file reader implementation using Apache Commons */
+/* This is simple and short file reader implementation using Apache Commons.
+* Don't use it on big files! */
 public final class ApacheCommonsIOSimpleLineReader {
     private final List lines;
 

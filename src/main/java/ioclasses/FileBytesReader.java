@@ -10,9 +10,9 @@ import java.nio.channels.FileChannel;
 /** This class uses RandomAccessFile + FileChannel + ByteBuffer + byte array
  * to efficiently read file data into buffered byte arrays. Byte array is then
  * written to ByteArrayOutputStream and converted to String.
- * This method should outperform other implementations here.*/
+ * This method is the fastest in ioclasses.*/
 public final class FileBytesReader {
-    private final FileChannel channel;
+    private final FileChannel fileChannel;
     private final ByteBuffer bbuffer;
     // default value is 8192
     private final int BUFFERSIZE = 8192;
@@ -21,13 +21,13 @@ public final class FileBytesReader {
     public FileBytesReader(String filepath) throws FileNotFoundException {
         RandomAccessFile rndFile = new RandomAccessFile(filepath, "r");
         bbuffer = ByteBuffer.allocateDirect(BUFFERSIZE);
-        channel = rndFile.getChannel();
+        fileChannel = rndFile.getChannel();
         baos = new ByteArrayOutputStream();
     }
 
     public String read() throws IOException {
         byte[] bytes = new byte[BUFFERSIZE];
-        while (channel.read(bbuffer) > 0) {
+        while (fileChannel.read(bbuffer) > 0) {
             bbuffer.flip(); // reseting byte buffer pointer
             for (int i = 0; i < bbuffer.limit(); i++) {
                 bytes[i] = bbuffer.get();
@@ -35,7 +35,7 @@ public final class FileBytesReader {
             baos.write(bytes); // writing data to growable byte array
             bbuffer.clear();
         }
-        channel.close();
+        fileChannel.close();
         //return baos.toString("UTF-8");
         return baos.toString();
     }
