@@ -1,5 +1,5 @@
 //this package contains various useful IO utils
-package ioclasses;
+package tasty.io;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

@@ -1,4 +1,4 @@
-package ioclasses;
+package tasty.io;
 
 import java.io.File;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package ioclasses;
+package tasty.io;
 
 import com.google.common.base.Charsets;
 import com.google.common.io.CharSource;

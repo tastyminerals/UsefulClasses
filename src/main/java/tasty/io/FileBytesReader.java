@@ -1,4 +1,4 @@
-package ioclasses;
+package tasty.io;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;

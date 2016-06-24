@@ -1,10 +1,8 @@
-import com.google.common.base.Charsets;
-import com.google.common.io.Files;
-import ioclasses.ApacheCommonsIOReader;
-import ioclasses.ApacheCommonsIOSimpleLineReader;
-import ioclasses.FileBytesReader;
-import ioclasses.FileLinesReader;
-import ioclasses.GuavaBufferedReader;
+import tasty.io.ApacheCommonsIOReader;
+import tasty.io.ApacheCommonsIOSimpleLineReader;
+import tasty.io.FileBytesReader;
+import tasty.io.FileLinesReader;
+import tasty.io.GuavaBufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -21,6 +19,7 @@ public class ReadersRunner {
         // tryApacheCommonsIOSimpleLineReader(f);
         // tryGuavaBufferedReader(f);
     }
+
 
     public static void tryGuavaBufferedReader(File f) {
         GuavaBufferedReader reader = null;
