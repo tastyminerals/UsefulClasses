@@ -10,7 +10,7 @@ import java.nio.channels.FileChannel;
 /** This class uses RandomAccessFile + FileChannel + ByteBuffer + byte array
  * to efficiently read file data into buffered byte arrays. Byte array is then
  * written to ByteArrayOutputStream and converted to String.
- * This method is the fastest in ioclasses.*/
+ * This method is the fastest in io.*/
 public final class FileBytesReader {
     private final FileChannel fileChannel;
     private final ByteBuffer bbuffer;

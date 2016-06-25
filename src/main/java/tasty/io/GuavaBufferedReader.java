@@ -8,7 +8,7 @@ import java.io.File;
 import java.io.IOException;
 
 /* This is a file reader implementation using Guava.
-Second fastest in ioclasses. */
+Second fastest in io. */
 public final class GuavaBufferedReader {
     private final CharSource charSource;
     private final BufferedReader buffReader;
